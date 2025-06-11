@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final TextEditingController _controller = TextEditingController();
+  final String _text = 'Texte à envoyer';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,18 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
-              controller: _controller,
-              decoration: const InputDecoration(
-                labelText: 'Enter something',
-              ),
+            Text(
+              _text, style: TextStyle(fontSize: 24),
             ),
             MaterialButton(
                 onPressed: (){
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SecondPage(
-                      text: _controller.text,
+                      text: _text,
                     ),
                     ),
                   );
