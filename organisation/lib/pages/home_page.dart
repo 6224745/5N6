@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:organisation/widgets/drawer.dart';
+import '../method/ListView.dart';
 import '../models/cat.dart';
+import 'package:organisation/method/banniere_du_haut.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,45 +42,7 @@ class _HomePageState extends State<HomePage> {
       appBar:  AppBar(title: const Text("Extraire les widgets"),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      drawer: Drawer(
-        elevation: 10,
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Text(
-                  'Mes chats',
-                  style: Theme.of(context).textTheme.headlineLarge
-              ),
-            ),
-            Card(
-              child: MaterialButton(
-                onPressed: () {},
-                child: const ListTile(
-                  leading: Icon(
-                      Icons.add,
-                      size: 56.0
-                  ),
-                  title: Text('Ajouter un chat'),
-                  subtitle: Text('Toujours plus de chats'),
-                ),
-              ),
-            ),
-            Card(
-              child: MaterialButton(
-                onPressed: () {},
-                child: const ListTile(
-                  leading: Icon(
-                      Icons.pets,
-                      size: 56.0
-                  ),
-                  title: Text('Accueil'),
-                  subtitle: Text('Avec une liste de chats'),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      drawer: const drawer(),
       body: Stack(
         children: [
           Container(
@@ -103,209 +67,9 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             children: [
-              SizedBox(
-                height: 120,
-                child: Stack(
-                  children: [
-                    Material(
-                      elevation: 20,
-                      child: Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        color: const Color(0xFF6e8f92),
-                      ),
-                    ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipOval(
-                              child:
-                              Image.network(
-                                'https://avatars.githubusercontent.com/u/11493174',
-                                fit:BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const Spacer(),
-                          const Expanded(
-                            flex: 8,
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "Profession",
-                                    style: TextStyle(fontSize:32.0,
-                                        color: Color(0xFF204f4f),
-                                        fontWeight: FontWeight.w600,
-                                        fontFamily: "Roboto"),
-                                  ),
-
-                                  Text(
-                                    "Passionné des chats",
-                                    style: TextStyle(fontSize:24.0,
-                                        color: Color(0xFF000000),
-                                        fontWeight: FontWeight.w200,
-                                        fontFamily: "Roboto"),
-                                  ),
-                                ]
-                            ),
-                          )
-                        ]
-
-                    ),
-                  ],
-                ),
-              ),
+              banniere_du_haut(),
               Expanded(
-                child: ListView(
-                  children: [
-                    const Text(
-                      "Ma collection de chats",
-                      style: TextStyle(fontSize:32.0,
-                          color: Color(0xFF204f4f),
-                          fontWeight: FontWeight.w600,
-                          fontFamily: "Roboto"),
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[0].name),
-                                    subtitle: Text(
-                                      _cats[0].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[0].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[1].name),
-                                    subtitle: Text(
-                                      _cats[1].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[1].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[2].name),
-                                    subtitle: Text(
-                                      _cats[2].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[2].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[3].name),
-                                    subtitle: Text(
-                                      _cats[3].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[3].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[4].name),
-                                    subtitle: Text(
-                                      _cats[4].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[4].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: SizedBox(
-                            height: 220,
-                            child: Card(
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text(_cats[5].name),
-                                    subtitle: Text(
-                                      _cats[5].description,
-                                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                                    ),
-                                  ),
-                                  Image.network(_cats[5].image),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: listView(cats: _cats),
               ),
             ],
           ),
