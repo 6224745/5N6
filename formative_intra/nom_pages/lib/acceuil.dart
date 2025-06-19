@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nom_pages/tiroir_nav.dart';
 
 class AcceuilPage extends StatefulWidget {
   const AcceuilPage({super.key});
@@ -13,6 +14,7 @@ class _MyAcceuilPageState extends State<AcceuilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: LeTiroir(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Accueil'),
