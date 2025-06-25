@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Multilingue Bizarre',
       debugShowCheckedModeBanner: false,
       supportedLocales: const [
+        Locale('en'),
         Locale('fr'),
-        Locale('no'),
+        Locale('nb'),
         Locale('ja'),
       ],
       localizationsDelegates: const [

@@ -6,7 +6,7 @@ import 'app_localizations.dart';
 
 /// The translations for Norwegian (`no`).
 class AppLocalizationsNo extends AppLocalizations {
-  AppLocalizationsNo([String locale = 'no']) : super(locale);
+  AppLocalizationsNo([String locale = 'nb']) : super(locale);
 
   @override
   String get appTitle => 'Super uendelig flerspråklig!';
