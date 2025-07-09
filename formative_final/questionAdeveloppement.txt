@@ -1,0 +1,19 @@
+Les cookies web
+
+Un cookie est un petit fichier texte qu'un site web stocke sur votre appareil (ordinateur, smartphone, tablette) lorsque vous le visitez. Ce fichier contient des informations que le site peut récupérer lors de vos visites ultérieures.
+
+Utilités principales des cookies
+
+Session utilisateur : Maintenir votre connexion sur un site sans avoir à vous reconnecter à chaque page
+Personnalisation : Mémoriser vos préférences (langue, thème, etc.)
+Suivi et analytique : Collecter des informations sur votre navigation pour améliorer le site
+Publicité ciblée : Afficher des annonces personnalisées selon vos centres d'intérêt
+
+Caractéristiques techniques
+
+Taille limitée (généralement quelques Ko)
+Stockés localement sur votre appareil
+Associés à un domaine spécifique
+Possèdent une date d'expiration
+Envoyés automatiquement au serveur lors de chaque requête au domaine concerné
+Différents types existent, comme les cookies de session (temporaires) et les cookies persistants (longue durée).
