@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // Variables pour stocker les informSations récupérées
   String nom = "";
   String prenom = "";
+  String complete = ""; // Ajout d'une variable pour stocker l'état de "complete"
 
   // Référence à la collection Firestore
   final CollectionReference etudiantsCollection =
@@ -63,17 +64,20 @@ class _MyHomePageState extends State<MyHomePage> {
         setState(() {
           nom = data['nom'] ?? "";
           prenom = data['prenom'] ?? "";
+          complete = (data['complete'] != null) ? data['complete'].toString() : "";
         });
       } else {
         setState(() {
           nom = "Document non trouvé";
           prenom = "Document non trouvé";
+          complete = "non trouvé";
         });
       }
     } catch (e) {
       setState(() {
         nom = "Erreur: ${e.toString()}";
         prenom = "Erreur lors de la récupération";
+        complete = "erreur";
       });
     }
   }
@@ -139,6 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text('Nom: $nom', style: const TextStyle(fontSize: 18)),
                   const SizedBox(height: 10),
                   Text('Prénom: $prenom', style: const TextStyle(fontSize: 18)),
+                  const SizedBox(height: 10),
+                  Text('Complète: $complete', style: const TextStyle(fontSize: 18)), // Affichage de l'état "complete"
                 ],
               ),
             ),
